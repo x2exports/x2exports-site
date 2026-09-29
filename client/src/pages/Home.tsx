@@ -19,6 +19,7 @@ const racksImage = "/manus-storage/ironforge-racks-lockers_b6bf8a0f.jpg";
 const cotsImage = "/manus-storage/ironforge-cots-bunks_cd99b883.jpg";
 const wardrobeImage = "/manus-storage/ironforge-wardrobe_f9d60474.jpg";
 const markImage = "/manus-storage/ironforge-mark_5f17e14f.png";
+const inquiryEndpoint = "https://script.google.com/macros/s/AKfycbzNZYO5YCdeJ8P-bZywiBRnsQ-gO9_H7E0igprgFqDR_cwqUDsX7od0G8Nnu4rXbUA6YQ/exec";
 const angleImages = {
   rack: "/manus-storage/x2exports-angle-rack_d90cd259.jpg",
   cot: "/manus-storage/x2exports-angle-cot_71d656a4.jpg",
@@ -63,10 +64,32 @@ const products = [
 ];
 
 function InquiryModal({ onClose }: { onClose: () => void }) {
-  const submit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    toast.success("Requirement noted", { description: "Your inquiry is ready to be sent to the export desk." });
-    onClose();
+    setIsSubmitting(true);
+    const formData = new FormData(event.currentTarget);
+    const payload = new URLSearchParams();
+    formData.forEach((value, key) => {
+      if (typeof value === "string") payload.append(key, value);
+    });
+    payload.append("source", "x2exports.com");
+
+    try {
+      await fetch(inquiryEndpoint, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: payload.toString(),
+        keepalive: true,
+      });
+      toast.success("Requirement sent", { description: "Your inquiry has been sent to the x2exports export desk." });
+      onClose();
+    } catch {
+      setIsSubmitting(false);
+      toast.error("Could not send inquiry", { description: "Please try again or contact contact@x2exports.com directly." });
+    }
   };
 
   return (
@@ -87,7 +110,7 @@ function InquiryModal({ onClose }: { onClose: () => void }) {
             <div className="form-field"><label htmlFor="product">Product</label><input id="product" name="product" placeholder="e.g. bunk beds" /></div>
             <div className="form-field full"><label htmlFor="message">Requirement</label><textarea id="message" name="message" placeholder="Tell us quantities, dimensions, finish, or destination." /></div>
           </div>
-          <button className="button-primary form-submit" type="submit">Send to export desk <ArrowUpRight size={16} /></button>
+          <button className="button-primary form-submit" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending…" : "Send to export desk"} {!isSubmitting && <ArrowUpRight size={16} />}</button>
         </form>
       </div>
     </div>
