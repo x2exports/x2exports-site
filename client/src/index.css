@@ -233,6 +233,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .inquiry-side { border-left: 1px solid rgba(255,247,239,.38); padding-left: 1.5rem; }
 .inquiry-side p { color: rgba(255,247,239,.68); line-height: 1.6; font-size: .87rem; }
 .inquiry-side a { display: inline-flex; gap: .5rem; align-items: center; margin-top: 1rem; font-family: 'Barlow Condensed'; font-size: 1.35rem; text-transform: uppercase; border-bottom: 1px solid rgba(255,247,239,.65); padding-bottom: .35rem; }
+.inquiry-address { margin-top: 1.4rem; color: rgba(255,247,239,.72); font-size: .82rem; line-height: 1.6; font-style: normal; }
+.inquiry-address .upper-label { color: rgba(255,247,239,.52); }
 
 .site-footer { background: var(--graphite); color: var(--bone); padding: 2rem 0 1.5rem; }
 .footer-top { display: flex; align-items: start; justify-content: space-between; gap: 2rem; padding-bottom: 2.2rem; border-bottom: 1px solid rgba(242,238,230,.18); }
