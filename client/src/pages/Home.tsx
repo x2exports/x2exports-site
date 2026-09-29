@@ -71,10 +71,10 @@ function InquiryModal({ onClose }: { onClose: () => void }) {
     setIsSubmitting(true);
     const formData = new FormData(event.currentTarget);
     const payload = new URLSearchParams();
-    formData.forEach((value, key) => {
+    ["name", "email", "product", "message"].forEach((key) => {
+      const value = formData.get(key);
       if (typeof value === "string") payload.append(key, value);
     });
-    payload.append("source", "x2exports.com");
 
     try {
       await fetch(inquiryEndpoint, {
@@ -105,9 +105,8 @@ function InquiryModal({ onClose }: { onClose: () => void }) {
         <form onSubmit={submit}>
           <div className="form-grid">
             <div className="form-field"><label htmlFor="name">Your name</label><input id="name" name="name" required placeholder="Name" /></div>
-            <div className="form-field"><label htmlFor="company">Company</label><input id="company" name="company" required placeholder="Company name" /></div>
             <div className="form-field"><label htmlFor="email">Work email</label><input id="email" type="email" name="email" required placeholder="name@company.com" /></div>
-            <div className="form-field"><label htmlFor="product">Product</label><input id="product" name="product" placeholder="e.g. bunk beds" /></div>
+            <div className="form-field full"><label htmlFor="product">Product</label><input id="product" name="product" placeholder="e.g. bunk beds" /></div>
             <div className="form-field full"><label htmlFor="message">Requirement</label><textarea id="message" name="message" placeholder="Tell us quantities, dimensions, finish, or destination." /></div>
           </div>
           <button className="button-primary form-submit" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending…" : "Send to export desk"} {!isSubmitting && <ArrowUpRight size={16} />}</button>
