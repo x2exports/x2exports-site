@@ -14,26 +14,26 @@ import {
   X,
 } from "lucide-react";
 
-const heroImage = "/manus-storage/ironforge-hero_772b5aee.jpg";
-const racksImage = "/manus-storage/ironforge-racks-lockers_b6bf8a0f.jpg";
-const cotsImage = "/manus-storage/ironforge-cots-bunks_cd99b883.jpg";
-const wardrobeImage = "/manus-storage/ironforge-wardrobe_f9d60474.jpg";
-const markImage = "/manus-storage/ironforge-mark_5f17e14f.png";
+const heroImage = "/assets/ironforge-hero_772b5aee.jpg";
+const racksImage = "/assets/ironforge-racks-lockers_b6bf8a0f.jpg";
+const cotsImage = "/assets/ironforge-cots-bunks_cd99b883.jpg";
+const wardrobeImage = "/assets/ironforge-wardrobe_f9d60474.jpg";
+const markImage = "/assets/ironforge-mark_5f17e14f.png";
 const inquiryEndpoint = "https://script.google.com/macros/s/AKfycbzNZYO5YCdeJ8P-bZywiBRnsQ-gO9_H7E0igprgFqDR_cwqUDsX7od0G8Nnu4rXbUA6YQ/exec";
 const angleImages = {
-  rack: "/manus-storage/x2exports-angle-rack_d90cd259.jpg",
-  cot: "/manus-storage/x2exports-angle-cot_71d656a4.jpg",
-  locker: "/manus-storage/x2exports-angle-locker_4dfbdda2.jpg",
-  wardrobe: "/manus-storage/x2exports-angle-wardrobe_175e00b5.jpg",
-  bunk: "/manus-storage/x2exports-angle-bunk_a659675d.jpg",
+  rack: "/assets/x2exports-angle-rack_d90cd259.jpg",
+  cot: "/assets/x2exports-angle-cot_71d656a4.jpg",
+  locker: "/assets/x2exports-angle-locker_4dfbdda2.jpg",
+  wardrobe: "/assets/x2exports-angle-wardrobe_175e00b5.jpg",
+  bunk: "/assets/x2exports-angle-bunk_a659675d.jpg",
 };
 
 const galleryProducts = [
-  { id: "rack", label: "Iron angle rack", base: "/manus-storage/ironforge-racks-lockers_b6bf8a0f.jpg", alternate: angleImages.rack, note: "Storage systems / 01" },
-  { id: "cot", label: "Iron cot", base: "/manus-storage/ironforge-cots-bunks_cd99b883.jpg", alternate: angleImages.cot, note: "Accommodation / 02" },
-  { id: "locker", label: "Iron file lockers", base: "/manus-storage/ironforge-racks-lockers_b6bf8a0f.jpg", alternate: angleImages.locker, note: "Storage systems / 03" },
-  { id: "wardrobe", label: "Iron wardrobes", base: "/manus-storage/ironforge-wardrobe_f9d60474.jpg", alternate: angleImages.wardrobe, note: "Accommodation / 04" },
-  { id: "bunk", label: "Iron bunk beds", base: "/manus-storage/ironforge-cots-bunks_cd99b883.jpg", alternate: angleImages.bunk, note: "Accommodation / 05" },
+  { id: "rack", label: "Iron angle rack", base: "/assets/ironforge-racks-lockers_b6bf8a0f.jpg", alternate: angleImages.rack, note: "Storage systems / 01" },
+  { id: "cot", label: "Iron cot", base: "/assets/ironforge-cots-bunks_cd99b883.jpg", alternate: angleImages.cot, note: "Accommodation / 02" },
+  { id: "locker", label: "Iron file lockers", base: "/assets/ironforge-racks-lockers_b6bf8a0f.jpg", alternate: angleImages.locker, note: "Storage systems / 03" },
+  { id: "wardrobe", label: "Iron wardrobes", base: "/assets/ironforge-wardrobe_f9d60474.jpg", alternate: angleImages.wardrobe, note: "Accommodation / 04" },
+  { id: "bunk", label: "Iron bunk beds", base: "/assets/ironforge-cots-bunks_cd99b883.jpg", alternate: angleImages.bunk, note: "Accommodation / 05" },
 ];
 
 function ProductGallery() {

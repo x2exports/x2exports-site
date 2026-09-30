@@ -117,7 +117,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-cta:active, .button-primary:active, .button-outline:active { transform: scale(.97); }
 
 .hero { min-height: 720px; background: var(--graphite); color: var(--bone); }
-.hero-image { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(21,23,22,.98) 0%, rgba(21,23,22,.89) 31%, rgba(21,23,22,.2) 72%, rgba(21,23,22,.35) 100%), url('/manus-storage/ironforge-hero_772b5aee.jpg'); background-size: cover; background-position: center; }
+.hero-image { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(21,23,22,.98) 0%, rgba(21,23,22,.89) 31%, rgba(21,23,22,.2) 72%, rgba(21,23,22,.35) 100%), url('/assets/ironforge-hero_772b5aee.jpg'); background-size: cover; background-position: center; }
 .hero-grid-lines { position: absolute; inset: 0; opacity: .14; background-image: linear-gradient(rgba(242,238,230,.32) 1px, transparent 1px), linear-gradient(90deg, rgba(242,238,230,.32) 1px, transparent 1px); background-size: 100% 142px, 142px 100%; mask-image: linear-gradient(to right, #000 0%, transparent 78%); pointer-events: none; }
 .hero-content { position: relative; z-index: 1; padding-top: 11.5rem; padding-bottom: 5rem; }
 .hero-kicker { display: flex; align-items: center; gap: .7rem; color: var(--orange); }
@@ -282,7 +282,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .site-nav { height: 68px; }
   .desktop-nav { display: none; }
   .hero { min-height: 700px; }
-  .hero-image { background-position: 63% center; background-image: linear-gradient(90deg, rgba(21,23,22,.98) 0%, rgba(21,23,22,.8) 62%, rgba(21,23,22,.25) 100%), url('/manus-storage/ironforge-hero_772b5aee.jpg'); }
+  .hero-image { background-position: 63% center; background-image: linear-gradient(90deg, rgba(21,23,22,.98) 0%, rgba(21,23,22,.8) 62%, rgba(21,23,22,.25) 100%), url('/assets/ironforge-hero_772b5aee.jpg'); }
   .hero-content { padding-top: 9rem; }
   .hero-title { font-size: clamp(4.2rem, 20vw, 7.2rem); }
   .hero-foot { margin-top: 4rem; gap: 1rem; }
